@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Similar Filter
 // @namespace        http://tampermonkey.net/
-// @version        0.2
+// @version        0.3
 // @description        不要な「あなたと似た記事を書いているブログ」の非表示
 // @author        Ameba Blog User
 // @match        https://blog.ameba.jp/ucs/entry/srventryinsertend.do
@@ -240,12 +240,12 @@ function blocker(){
     function block_item(item, user_href){
         if(block_regex.test(user_href)==true){
             if(edit_mode==0){
-                item.style.visibility='hidden'; }
+                item.style.display='none'; }
             if(edit_mode==1){
-                item.style.visibility='visible';
-                item.style.background='#a9c1cf'; }}
+                item.style.display='';
+                item.style.background='#bfd4dd'; }}
         else{
-            item.style.visibility='visible';
+            item.style.display='';
             item.style.background='#f2f8fc'; }}
 
 
